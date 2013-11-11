@@ -16,3 +16,19 @@ references to allow Unit testing.
 
 November 2013: started this project on GitHub.
 
+## License
+
+The source code of the main application of the project is released
+under the terms of the GNU General Public License v2.
+
+External libraries used in the project may be subjected to other 
+licenses. We left all references inside the code of libraries used, so
+please be sure to check there in case of doubt.
+
+## Credits
+
+### QUnit
+
+[QUnit](http://qunitjs.com), Copyright 2013 jQuery Foundation and other 
+contributors, is released under the [MIT 
+license](https://jquery.org/license/).
