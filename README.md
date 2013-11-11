@@ -1,4 +1,4 @@
-= JSOI
+# JSOI
 
 JSOI, or _JavaScript Online Interpreter_, is a client-side web 
 application aimed to be a tool for students who are learning their 
@@ -6,7 +6,7 @@ first steps in coding by using Javascript.
 
 We want students to be able to work on-line or off-line, as they prefer.
 
-== History
+## History
 
 January 2013: [Peter Jipsen](http://www.chapman.edu/~jipsen/) released 
 the initial code.
