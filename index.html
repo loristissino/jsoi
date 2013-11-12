@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title>Online JavaScript Interpreter, with QUnit</title>
-<link rel="stylesheet" href="resources/qunit.css">
+<link rel="stylesheet" href="resources/qunit/qunit.css">
+<link rel="stylesheet" href="resources/jsoi/main.css">
 <script>
 /*
 This page contains JavaScript functions that evaluate interactive
-JavaScript locally in a browser
+JavaScript locally in a browser.
 
 Version of Jan 3, 2013, (c) Peter Jipsen http://www.chapman.edu/~jipsen
 Latest version at http://www.chapman.edu/~jipsen/js
@@ -121,21 +122,18 @@ fibonacci = function(n) {
     return a;
 }
 </script>
-<style>td {background:white; vertical-align:top; border:1px solid black; padding:2px 10px}
-pre {margin:0}
-table {border-collapse:collapse; table-layout:fixed}
-body {background:lightblue; font-family:Arial}
-textarea {font-family:Lucida console}
-</style>
+
 </head>
 <body onload="JSrun()"><!-- onpaste="return false;"-->
-<p><b><u>Online JavaScript Interpreter, with QUnit support:</u> Programming anywhere, nothing to install, works in any browser
-</b><br>
-Type your JavaScript program into the box below. Then click the <b>Run</b>
+<header>
+<h1>Online JavaScript Interpreter, with QUnit support</h1>
+<p>Programming anywhere, nothing to install, works in any browser.</p>
+</header>
+<p>Type your JavaScript program into the box below. Then click the <b>Run</b>
 button to see the result.  To <b>save your work</b>, select the text
 and copy it to an editor or email it to yourself.<br>
 The results of the QUnit tests are shown below.</p>
-<table width="100%">
+<table id="maintable">
 <tbody><tr><td><b>Type JavaScript</b> &nbsp; &nbsp; Examples: <select id="JSexamples" onchange="JSselect()">
 <option value="maximum" selected="">Maximum element</option>
 <option value="randomlist">Random list</option>
@@ -158,8 +156,8 @@ The results of the QUnit tests are shown below.</p>
 <b>Output</b> &nbsp; &nbsp; 
 Timing: <span id="JStiming">0.002</span> s
 </td></tr>
-<tr><td width="50%" style="padding:1px">
-<textarea id="JSprogram" style="height:5in; width:100%; font-family: monospace; font-size: 16; font-weight: bold;" onkeyup="keyUp(event)">// Find the maximum value in a list of numbers
+<tr><td id="TDprogram">
+<textarea id="JSprogram" onkeyup="keyUp(event)">// Find the maximum value in a list of numbers
 
 max = function(a) {
     var m = a[0];
@@ -175,15 +173,15 @@ writeln(a);
 max(a);
 </textarea>
 </td>
-<td width="50%" style="padding:1px">
-<textarea id="JSoutput" style="height:5in; width:100%; font-family: monospace; font-size: 16; font-weight: bold;"></textarea></td>
+<td id="TDoutput">
+<textarea id="JSoutput"></textarea></td>
 </tr>
 </tbody></table>
 
-<b>Note that this is dynamic code running locally on your machine.  If
+<p><b>Note that this is dynamic code running locally on your machine.  If
 you leave this page before copying and saving your work, it may
 disappear.
-</b>
+</b></p>
 
 <div id="qunit"></div>
 <div id="qunit-fixture"></div>
@@ -202,16 +200,16 @@ for <a href="http://www.google.com/search?q=javascript+tutorial">tutorials</a>
 </tr>
 <tr>
 <td><b>Constant</b></td>
-<td><tt><b>numbers</b> 12.3 <b>and strings</b> "hi", "hi".charAt(0) <b>is</b> "h"</tt></td>
+<td><span class="code"><b>numbers</b> 12.3 <b>and strings</b> "hi", "hi".charAt(0) <b>is</b> "h"</span></td>
 </tr>
 <tr>
 <td><b>Variable</b></td>
-<td><tt><b>start with a letter, then use letters, digits or _ (declared with</b> var<b>)</b></tt></td>
+<td><span class="code"><b>start with a letter, then use letters, digits or _ (declared with</b> var<b>)</b></span></td>
 </tr>
 <tr>
 <td><b>Expression</b></td>
-<td><tt><b>built from</b> +, -, *, /, pow(x,y), sqrt(), PI, E, log(), floor(), ceil(),<br>
-random(), sin(), cos(), tan(), atan() <b>and constants, variables, functions</b></tt></td>
+<td><span class="code"><b>built from</b> +, -, *, /, pow(x,y), sqrt(), PI, E, log(), floor(), ceil(),<br>
+random(), sin(), cos(), tan(), atan() <b>and constants, variables, functions</b></span></td>
 </tr>
 <tr>
 <td><b>Assignment</b></td>
@@ -226,8 +224,8 @@ random(), sin(), cos(), tan(), atan() <b>and constants, variables, functions</b>
 </tr>
 <tr>
 <td><b>Condition</b></td>
-<td><tt>expression == expression <b>or</b> &lt;=, &lt;, &gt;, &gt;=, !=...<br>
-<b>or</b> !cond, cond1 &amp;&amp; cond2, cond1 || cond2</tt></td>
+<td><span class="code">expression == expression <b>or</b> &lt;=, &lt;, &gt;, &gt;=, !=...<br>
+<b>or</b> !cond, cond1 &amp;&amp; cond2, cond1 || cond2</span></td>
 </tr>
 <tr>
 <td><b>if - else</b></td>
@@ -274,7 +272,6 @@ a.x is 3, a["x"] is 3, a.s() is 5
 </pre></td>
 </tr>
 </tbody></table>
-</p>
 
 <!--
 <p>
@@ -291,7 +288,7 @@ and use it even when you are not connected to the internet.
 -->
 
 <p>
-You can use a local copy of this page by downloading the files you need from this <a href="js_qunit.zip">zip file</a>, unzipping it into a local directory
+You can use a local copy of this page by downloading the files you need from this <a href="https://github.com/loristissino/jsoi/blob/master/downloads/jsoi.zip?raw=true">zip file</a>, unzipping it into a local directory
 and use it even when you are not connected to the internet.
 </p>
 
@@ -557,10 +554,10 @@ test( "equal test", function() {
 
 <hr>
 
-<div align="center">
+<footer>
 Original version by <a href="http://www.chapman.edu/~jipsen/">Peter Jipsen</a>, January 2013, <a href="http://www.chapman.edu/">Chapman University</a><br />
 Added unit testing support by <a href="http://loris.tissino.it">Loris Tissino</a>, November 2013
-</div>
+</footer>
 
 
 

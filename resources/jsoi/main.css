@@ -1,0 +1,15 @@
+td {background:white; vertical-align:top; border:1px solid black; padding:2px 10px}
+pre {margin:0}
+table {border-collapse:collapse; table-layout:fixed}
+body {background:lightblue; font-family:Arial}
+textarea {font-family:Lucida console}
+#maintable {width: 100%}
+footer {text-align: center}
+#sourcecode {width: 50%; padding: 1px}
+#execution {width: 50%; padding: 1px}
+#JSprogram {height:5in; width:99%; font-family: monospace; font-size: 16; font-weight: bold;}
+#JSoutput {height:5in; width:99%; font-family: monospace; font-size: 16; font-weight: bold;}
+span.code {font-family: Lucida console, monospace}
+
+header {text-align: center}
+header p {font-weight: bold}
