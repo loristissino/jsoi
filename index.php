@@ -54,7 +54,7 @@ foreach(file('examples/list.txt') as $row)
         <?php endforeach ?>
         </select>
         </td><td>
-        <input type="button" value="Run (Ctrl-m)" onclick="JSrun()"> &nbsp; &nbsp;
+        <input type="button" value="Run (Ctrl-B)" onclick="JSrun()"> &nbsp; &nbsp;
         <b>Output</b> &nbsp; &nbsp; 
         Timing: <span id="JStiming">0.002</span> s
         </td></tr>

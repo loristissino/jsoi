@@ -81,7 +81,7 @@ JSselect = function() {
 }
 
 keyUp = function(event){
-  if (event.which==77 && event.ctrlKey) JSrun();
+  if (event.ctrlKey && event.keyCode == 'B'.charCodeAt(0)) JSrun();
 }
 
 random_list = function(n, r, s) {
