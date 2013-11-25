@@ -1,5 +1,7 @@
 <?php
 
+$version_number = "1.1";
+
 $examples=array();
 
 foreach(file('examples/list.txt') as $row)
@@ -202,7 +204,7 @@ writeln("Hello, world!");
   <div class="footer-container">
     <footer class="wrapper">
       <p>Original version by <a href="http://www.chapman.edu/~jipsen/">Peter Jipsen</a>, January 2013, <a href="http://www.chapman.edu/">Chapman University</a><br />
-      Added unit testing support by <a href="http://loris.tissino.it">Loris Tissino</a>, November 2013<br>
+      Added unit testing support by <a href="http://loris.tissino.it">Loris Tissino</a>, November 2013 -- version <?php echo $version_number ?><br>
       You can use a local copy of this page by downloading the files you need from this <a href="https://github.com/loristissino/ojsi/blob/master/downloads/ojsi.zip?raw=true">zip file</a> and unzipping it into a local directory: use it even when you are not connected to the internet.</p>
 
     </footer>
