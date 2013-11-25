@@ -10,7 +10,7 @@ If you use it on a webpage, please send the URL to jipsen@chapman.edu
 Added Qunit support and sample on October 3, 2013, (c) Loris Tissino 
 http://loris.tissino.it
 
-Find more at https://github.com/loristissino/jsoi
+Find more at https://github.com/loristissino/ojsi
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
