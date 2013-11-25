@@ -13,8 +13,8 @@ mult = function(A,B) {
     return C;
 }
 
-A = random_matrix(3,3,0,4); writeln(A)
-B = random_matrix(3,3,0,4); writeln(B)
+var A = random_matrix(3,3,0,4); writeln(A)
+var B = random_matrix(3,3,0,4); writeln(B)
 mult(A,B);
 
 /*

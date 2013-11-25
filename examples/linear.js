@@ -10,7 +10,7 @@ linear_search = function(x,a) {
     else return "not found";
 }
 
-a = random_list(6,1,10);
+var a = random_list(6,1,10);
 writeln(a);
 linear_search(3,a);
 

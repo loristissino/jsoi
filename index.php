@@ -1,6 +1,6 @@
 <?php
 
-$version_number = "1.1";
+$version_number = "1.2";
 
 $examples=array();
 
@@ -20,7 +20,7 @@ foreach(file('examples/list.txt') as $row)
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="Online Javascript Interpreter">
   <meta name="viewport" content="width=device-width">
-  <title>Online JavaScript Interpreter, with QUnit</title>
+  <title>Online JavaScript Interpreter, with QUnit support</title>
   <link rel="stylesheet" href="resources/initializr/normalize.min.css">
   <link rel="stylesheet" href="resources/initializr/main.css">
   <link rel="stylesheet" href="resources/qunit/qunit.css">
@@ -40,15 +40,14 @@ foreach(file('examples/list.txt') as $row)
     <header class="wrapper clearfix">
       <h1 id="long-title">Online JavaScript Interpreter, with QUnit support</h1>
       <h1 id="short-title">OJSI</h1>
-      <p class="not-essential">Programming anywhere, nothing to install, works in any browser.</p>
+      <!--<p class="not-essential">Programming anywhere, nothing to install, works in any browser.</p>-->
     </header>
   </div>
   <div class="main-container">
     <div class="main wrapper clearfix">
       <p class="not-essential">Type your JavaScript program into the box below. Then click the <b>Run</b>
-      button to see the result.  To <b>save your work</b>, select the text
-      and copy it to an editor or email it to yourself.<br>
-      The results of the QUnit tests are shown below.</p>
+      button to see the result.  You can <b>save your work</b> using the local storage of your browser. You can of course select the text
+      and copy it to an editor or email it to yourself at any time. The results of the QUnit tests are shown below.</p>
       <table id="maintable">
         <tbody><tr><td><b>Type JavaScript</b> &nbsp; &nbsp; Examples: <select id="JSexamples" onchange="JSselect()">
         <option value="">[Select an example]</option>
@@ -60,7 +59,7 @@ foreach(file('examples/list.txt') as $row)
         <input type="button" value="Run (Ctrl-B)" onclick="JSrun()"> &nbsp; &nbsp;
         <b>Output</b> &nbsp; &nbsp; 
         <span id="JSinfo"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="JSname">
+        <input type="text" id="JSname" placeholder="program name-">
         <input type="button" value="Save" onclick="JSsave()">
         <input type="button" value="Load" onclick="JSload()">
         <input type="button" value="List" onclick="JSlist()">
@@ -72,18 +71,13 @@ foreach(file('examples/list.txt') as $row)
         <textarea id="JSprogram" onkeyup="keyUp(event)">// Hello, world!
         
 writeln("Hello, world!");
-        </textarea>
+</textarea>
         </td>
         <td id="TDoutput">
         <textarea id="JSoutput"></textarea></td>
         </tr>
         </tbody>
       </table>
-
-      <p><b>Note that this is dynamic code running locally on your machine.  If
-      you leave this page before copying and saving your work, it may
-      disappear.
-      </b></p>
 
       <div id="qunit"></div>
       <div id="qunit-fixture"></div>

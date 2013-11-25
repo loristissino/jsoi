@@ -4,12 +4,12 @@
 random_list = function(n, r, s) {
     var a = [];
     for (var i = 0; i &lt; n; i++) {
-	a[i] = floor(random()*(s-r+1)) + r;
-    }
+        a[i] = floor(random()*(s-r+1)) + r;
+        }
     return a;
 }
 
-random_list(100,1,10);
+var r = random_list(100,1,10);
 
 /*
  * Copyright 2013 Peter Jepsen

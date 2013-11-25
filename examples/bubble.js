@@ -9,11 +9,11 @@ bubble_sort = function(a) {
                 t = a[j];
                 a[j] = a[j+1];
                 a[j+1] = t;
-	    }
+        }
     return a;
 }
 
-a = random_list(6,1,10);
+var a = random_list(6,1,10);
 writeln(a);
 bubble_sort(a);
 
