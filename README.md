@@ -1,6 +1,6 @@
-# JSOI
+# OJSI
 
-JSOI, or _JavaScript Online Interpreter_, is a client-side web 
+OJSI, or _Online JavaScript Interpreter_, is a client-side web 
 application aimed to be a tool for students who are learning their 
 first steps in coding by using Javascript.
 
@@ -32,3 +32,8 @@ please be sure to check there in case of doubt.
 [QUnit](http://qunitjs.com), Copyright 2013 jQuery Foundation and other 
 contributors, is released under the [MIT 
 license](https://jquery.org/license/).
+
+### Initializr
+
+[Initializr](http://www.initializr.com/) has been used to prepare a
+standard HTML5 template with responsive design.
