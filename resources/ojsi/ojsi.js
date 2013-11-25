@@ -66,7 +66,7 @@ JSrun = function() {
             str = JSoutput(eval(document.getElementById("JSprogram").value));
         }
     } catch(e) {
-        str = e.name+" at line "+(e.lineNumber-56)+": "+e.message;
+        str = e.name + ": " + e.message;
     }
     var tnode = document.getElementById("JStiming");
     tnode.innerHTML = ""+(new Date().getTime()-d)/1000;
