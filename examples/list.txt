@@ -1,0 +1,16 @@
+basic_io	Basic Input/Output
+maximum	Maximum element
+randomlist	Random list
+linear	Linear search
+binary	Binary search
+bubble	Bubble sort
+base	Convert base
+powermod	Modular exponentiation
+gcd	Greatest common divisor
+factor	Prime factorization
+factorial	Factorial recursion
+fibonacci	Fibonacci numbers
+combinations	Combinations
+randommatrix	Random matrix
+matrixmult	Matrix multiplication
+unittest	Unit test sample
