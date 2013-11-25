@@ -12,5 +12,5 @@ zip -r downloads/ojsi.zip ojsi
 
 pwd
 
-
-#rm -rf ojsi
+cd ojsi
+zip -r ../downloads/ojsi_inside.zip .

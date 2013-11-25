@@ -68,8 +68,8 @@ JSrun = function() {
     } catch(e) {
         str = e.name + ": " + e.message;
     }
-    var tnode = document.getElementById("JStiming");
-    tnode.innerHTML = ""+(new Date().getTime()-d)/1000;
+    var tnode = document.getElementById("JSinfo");
+    tnode.innerHTML = "Timing: "+(new Date().getTime()-d)/1000 + " s";
     if (str != undefined) {outnode.value += str;}
 }
 
@@ -83,6 +83,103 @@ JSselect = function() {
 keyUp = function(event){
   if (event.ctrlKey && event.keyCode == 'B'.charCodeAt(0)) JSrun();
 }
+
+function supports_html5_storage() {
+  try {
+    return 'localStorage' in window && window['localStorage'] !== null;
+  } catch (e) {
+    return false;
+  }
+}
+
+JSsave = function() {
+  var name=document.getElementById("JSname").value;
+  var info=document.getElementById("JSinfo");
+  if(supports_html5_storage()) {
+    if(name.length>0) {
+      localStorage[name]=document.getElementById("JSprogram").value;
+      info.innerHTML="Saved!";
+      }
+    else {
+      info.innerHTML="No name provided.";
+      }
+    }
+  else {
+    info.innerHTML="Local storage not supported.";
+    }
+  }
+
+JSload = function() {
+  var name=document.getElementById("JSname").value;
+  var info=document.getElementById("JSinfo");
+  if(supports_html5_storage()) {
+    document.getElementById("JSprogram").value = localStorage[name];
+    info.innerHTML="Loaded.";
+    }
+  }
+
+JSdelete = function() {
+  var namefield=document.getElementById("JSname");
+  var info=document.getElementById("JSinfo");
+  if(supports_html5_storage()) {
+    if(confirm("Sure?")) {
+      localStorage.removeItem(namefield.value);
+      namefield.value="";
+      info.innerHTML="Deleted!";
+      }
+    }
+  }
+
+JSlist = function() {
+  var info=document.getElementById("JSinfo");
+  if(supports_html5_storage()) {
+    str = "";
+    for (id in localStorage) {
+      str += id + "\n";
+    }
+    document.getElementById("JSoutput").value = str;
+    }
+    info.innerHTML="Listed.";
+  }
+
+JSversions = function() {
+  var info=document.getElementById("JSinfo");
+  if(supports_html5_storage()) {
+    str = "";
+    for (id in localStorage) {
+      str += "/* ----------------- " + id + " -----------------*/\n";
+      str += localStorage[id];
+      str += "\n\n";
+    }
+    document.getElementById("JSoutput").value = str;
+    }
+    info.innerHTML="Shown.";
+  }
+
+function padToTwo(number) {
+  if (number<=9) { number = ("0"+number).slice(-2); }
+  return number;
+}
+
+JSnow = function() {
+  var name=document.getElementById("JSname");
+  var info=document.getElementById("JSinfo");
+  var pos=name.value.indexOf("-");
+  if(pos>=0) {
+    var currentdate = new Date(); 
+    var datetime = padToTwo(currentdate.getHours()) + "" 
+      + padToTwo(currentdate.getMinutes()) + ""
+      + padToTwo(currentdate.getSeconds());
+    
+    name.value=name.value.substr(0,pos) + "-" + datetime;
+    info.innerHTML="Ready.";
+    }
+  else {
+    info.innerHTML="No dash found.";
+    }
+  
+  }
+  
 
 random_list = function(n, r, s) {
     var a = [];

@@ -49,6 +49,7 @@ foreach(file('examples/list.txt') as $row)
       The results of the QUnit tests are shown below.</p>
       <table id="maintable">
         <tbody><tr><td><b>Type JavaScript</b> &nbsp; &nbsp; Examples: <select id="JSexamples" onchange="JSselect()">
+        <option value="">[Select an example]</option>
         <?php foreach($examples as $id=>$comment): ?>
           <option value="<?php echo $id ?>"><?php echo $comment ?></option>
         <?php endforeach ?>
@@ -56,7 +57,14 @@ foreach(file('examples/list.txt') as $row)
         </td><td>
         <input type="button" value="Run (Ctrl-B)" onclick="JSrun()"> &nbsp; &nbsp;
         <b>Output</b> &nbsp; &nbsp; 
-        Timing: <span id="JStiming">0.002</span> s
+        <span id="JSinfo"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="JSname">
+        <input type="button" value="Save" onclick="JSsave()">
+        <input type="button" value="Load" onclick="JSload()">
+        <input type="button" value="List" onclick="JSlist()">
+        <input type="button" value="Versions" onclick="JSversions()">
+        <input type="button" value="Now" onclick="JSnow()">
+        <input type="button" value="Delete" onclick="JSdelete()">
         </td></tr>
         <tr><td id="TDprogram">
         <textarea id="JSprogram" onkeyup="keyUp(event)">// Hello, world!
