@@ -1,6 +1,6 @@
 <?php
 
-$version_number = "1.2";
+$version_number = "1.3";
 
 $examples=array();
 
