@@ -44,7 +44,7 @@ write = function(str) {
 }
 
 writeln = function(str) {
-    if (!str && str!==0) str="";
+    if (!str && str!==0 && str!==false) str="";
     var outnode = document.getElementById("JSoutput");
     outnode.value += JSoutput(str)+"\n";
 }
