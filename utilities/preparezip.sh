@@ -5,6 +5,7 @@ mkdir ojsi
 cd ojsi
 wget 127.0.0.1/ojsi/index.php -O index.html
 wget 127.0.0.1/ojsi/myapp.php -O myapp.html
+todos myapp.html
 cp -r ../resources .
 cd ..
 
