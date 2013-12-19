@@ -1,6 +1,6 @@
 <?php
 
-$version_number = "1.5";
+$version_number = "1.6";
 
 $examples=array();
 
@@ -21,10 +21,10 @@ foreach(file('examples/list.txt') as $row)
   <meta name="description" content="Online Javascript Interpreter">
   <meta name="viewport" content="width=device-width">
   <title>Online JavaScript Interpreter, with QUnit support</title>
+  <link rel="stylesheet" href="resources/ojsi/main.css">
   <link rel="stylesheet" href="resources/initializr/normalize.min.css">
   <link rel="stylesheet" href="resources/initializr/main.css">
   <link rel="stylesheet" href="resources/qunit/qunit.css">
-  <link rel="stylesheet" href="resources/ojsi/main.css">
   <script src="resources/qunit/qunit.js"></script>
   <script src="resources/initializr/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   <script src="resources/ojsi/ojsi.js">
@@ -43,42 +43,48 @@ foreach(file('examples/list.txt') as $row)
       <!--<p class="not-essential">Programming anywhere, nothing to install, works in any browser.</p>-->
     </header>
   </div>
+
+
+  
   <div class="main-container">
     <div class="main wrapper clearfix">
-      <p class="not-essential">Type your JavaScript program into the box below. Then click the <b>Run</b>
-      button to see the result.  You can <b>save your work</b> using the local storage of your browser. You can of course select the text
-      and copy it to an editor or email it to yourself at any time. The results of the QUnit tests are shown below.</p>
-      <table id="maintable">
-        <tbody><tr><td><b>Type JavaScript</b> &nbsp; &nbsp; Examples: <select id="JSexamples" onchange="JSselect()">
-        <option value="">[Select an example]</option>
-        <?php foreach($examples as $id=>$comment): ?>
-          <option value="<?php echo $id ?>"><?php echo $comment ?></option>
-        <?php endforeach ?>
-        </select>
-        </td><td>
-        <input type="button" value="Run (Ctrl-B)" onclick="JSrun()"> &nbsp; &nbsp;
-        <b>Output</b> &nbsp; &nbsp; 
-        <span id="JSinfo"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="JSname" placeholder="program name-">
-        <input type="button" value="Save" onclick="JSsave()">
-        <input type="button" value="Load" onclick="JSload()">
-        <input type="button" value="List" onclick="JSlist()">
-        <input type="button" value="Versions" onclick="JSversions()">
-        <input type="button" value="Now" onclick="JSnow()">
-        <input type="button" value="Delete" onclick="JSdelete()">
-        </td></tr>
-        <tr><td id="TDprogram">
-        <textarea id="JSprogram" onkeyup="keyUp(event)">// Hello, world!
-        
+        <div id="buttons">
+          <input type="button" value="Run (Ctrl-B)" onclick="JSrun()"> &nbsp; &nbsp;
+          <span id="JSinfo"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="JSname" placeholder="program name-">
+          <input type="button" value="Save" onclick="JSsave()">
+          <input type="button" value="Load" onclick="JSload()">
+          <input type="button" value="List" onclick="JSlist()">
+          <input type="button" value="Versions" onclick="JSversions()">
+          <input type="button" value="Now" onclick="JSnow()">
+          <input type="button" value="Delete" onclick="JSdelete()">
+          &nbsp; &nbsp;
+          &nbsp; &nbsp;
+          Examples: <select id="JSexamples" onchange="JSselect()">
+          <option value="">[Select an example]</option>
+          <?php foreach($examples as $id=>$comment): ?>
+            <option value="<?php echo $id ?>"><?php echo $comment ?></option>
+          <?php endforeach ?>
+          </select>
+          
+          <input type="button" value="Toggle canvas" onclick="JStoggle()">
+          
+        </div>
+        <div id="boxes">
+          <span id="sourcecode">
+            <textarea id="JSprogram" onkeyup="keyUp(event)">// Hello, world!
+
 writeln("Hello, world!");
 </textarea>
-        </td>
-        <td id="TDoutput">
-        <textarea id="JSoutput"></textarea></td>
-        </tr>
-        </tbody>
-      </table>
 
+          </span>
+          <span id="execution">
+            <textarea id="JSoutput"></textarea>
+          </span>
+          <canvas id="JScanvas" style="display: none">
+          
+        </div>
+        
       <div id="qunit"></div>
       <div id="qunit-fixture"></div>
 

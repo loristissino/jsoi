@@ -134,6 +134,9 @@ nav a:hover {
     text-decoration: underline;
 }
 
+
+
+
 /* ==============
     MOBILE: Main
    ============== */
@@ -169,7 +172,8 @@ nav a:hover {
    ========================================================================== */
 
 
-
+#JSprogram {width: 98%;}
+#JSoutput {width: 98%}
 
 
 
@@ -218,6 +222,10 @@ nav a:hover {
         display: none;
     }
 
+    #JSprogram {width: 47%;}
+    #JSoutput {width: 47%;}
+    #JScanvas {width: 47%;}
+
 /* ========================
     INTERMEDIATE: IE Fixes
    ======================== */
@@ -229,6 +237,8 @@ nav a:hover {
     .oldie nav a {
         margin: 0 0.7%;
     }
+    
+    
 }
 
 @media only screen and (min-width: 768px) {
@@ -270,6 +280,10 @@ nav a:hover {
         float: right;
         width: 28%;
     }
+    
+    #JSprogram {width: 47%;}
+    #JSoutput {width: 47%}
+
 }
 
 @media only screen and (min-width: 1140px) {
@@ -282,6 +296,10 @@ nav a:hover {
         /*width: 1026px; /* 1140px - 10% for margins */
         margin: 0 auto;
     }
+    
+    #JSprogram {width: 47%;}
+    #JSoutput {width: 47%}
+
 }
 
 /* ==========================================================================

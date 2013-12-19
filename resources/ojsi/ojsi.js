@@ -180,6 +180,20 @@ JSnow = function() {
   
   }
   
+JStoggle = function() {
+    var canvas=document.getElementById("JScanvas");
+    var output=document.getElementById("JSoutput");
+
+    if(output.style.display == 'none') {
+      output.style.display = '';
+      canvas.style.display = 'none';
+    }
+    else {
+      output.style.display = 'none';
+      canvas.style.display = '';
+    }
+  }
+
 
 random_list = function(n, r, s) {
     var a = [];

@@ -10,8 +10,9 @@ textarea {font-family:Lucida console}
 footer {text-align: center}
 #sourcecode {width: 50%; padding: 1px}
 #execution {width: 50%; padding: 1px}
-#JSprogram {height:5in; width:99%; font-family: monospace; font-size: 16; font-weight: bold;}
-#JSoutput {height:5in; width:99%; font-family: monospace; font-size: 16; font-weight: bold;}
+#JSprogram {height:5in; font-family: monospace; font-size: 16;}
+#JSoutput {height:5in; font-family: monospace; font-size: 16;}
+#JScanvas {border: 2px solid #d3d3d3; background-color: #FFFFD8 }
 span.code {font-family: Lucida console, monospace}
 
 header {text-align: center}
